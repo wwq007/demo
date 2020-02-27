@@ -13,6 +13,7 @@ import java.util.Date;
  * @Description: xxxxx
  */
 public class Date2LongSerializer extends JsonSerializer<Date> {
+    //时间毫秒数转成秒数
     @Override
     public void serialize(Date date, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
         jsonGenerator.writeNumber(date.getTime()/1000);

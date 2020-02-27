@@ -81,4 +81,12 @@ class OrderServiceImplTest {
         OrderDTO orderDTO = orderService.findByOrderId(ORDER_ID);
         orderService.paid(orderDTO);
     }
+
+    @Test
+    void findAll(){
+        PageRequest pageRequest = PageRequest.of(0,10);
+        Page<OrderDTO> orderDTOPage = orderService.findAll(pageRequest);
+        log.info("【查询列表】orderDTOPage={}",orderDTOPage);
+    }
+
 }
